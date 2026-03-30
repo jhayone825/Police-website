@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CRIMINAL INVESTIGATION DIVISION | PUBLIC DATABASE</title>
+<title>CRIMINAL INVESTIGATION DIVISION | PUBLIC ARCHIVE</title>
 
 <style>
     :root {
         --police-blue: #0b1424;
         --police-accent: #1e3a5f;
-        --alert-red: #cc0000;
+        --cleared-green: #28a745; /* Changed from Red to Green */
         --gold-seal: #d4af37;
         --text-silver: #e0e0e0;
         --input-bg: #1a2639;
@@ -17,12 +17,11 @@
 
     body {
         margin: 0;
-        font-family: 'Courier New', Courier, monospace; /* Monospace for "System" feel */
+        font-family: 'Courier New', Courier, monospace;
         background-color: #050a14;
         color: var(--text-silver);
     }
 
-    /* Top Government Header */
     .gov-banner {
         background: #000;
         font-size: 11px;
@@ -37,7 +36,6 @@
         border-bottom: 3px solid var(--gold-seal);
         padding: 30px 20px;
         text-align: center;
-        position: relative;
     }
 
     header h1 {
@@ -45,7 +43,6 @@
         font-size: 26px;
         letter-spacing: 4px;
         color: #fff;
-        text-shadow: 2px 2px #000;
     }
 
     .sub-header {
@@ -61,14 +58,11 @@
         padding: 40px 20px;
     }
 
-    /* Wanted Poster Style */
     .wanted-profile {
         display: grid;
         grid-template-columns: 300px 1fr;
         background: var(--police-blue);
         border: 2px solid #222;
-        box-shadow: 0 0 30px rgba(0,0,0,0.5);
-        margin-bottom: 40px;
     }
 
     .photo-sector {
@@ -81,11 +75,11 @@
     .photo-sector img {
         width: 100%;
         border: 4px solid #fff;
-        filter: sepia(20%);
+        filter: grayscale(100%); /* Desaturated to indicate inactive file */
     }
 
     .id-badge {
-        background: var(--alert-red);
+        background: var(--cleared-green); /* Changed color */
         color: white;
         padding: 10px;
         font-weight: bold;
@@ -95,14 +89,13 @@
 
     .info-sector {
         padding: 30px;
-        position: relative;
     }
 
     .info-sector h2 {
         font-size: 32px;
         margin-top: 0;
         color: #fff;
-        border-bottom: 2px solid var(--alert-red);
+        border-bottom: 2px solid var(--cleared-green);
     }
 
     .data-grid {
@@ -114,99 +107,44 @@
 
     .label { color: var(--gold-seal); font-weight: bold; }
 
-    /* Tip Submission Form */
-    .tip-form-container {
-        background: #0d1b2a;
-        border: 1px solid var(--police-accent);
-        padding: 30px;
-        border-radius: 4px;
-    }
-
-    .tip-form-container h3 {
-        color: #fff;
-        border-left: 5px solid var(--gold-seal);
-        padding-left: 15px;
-        margin-bottom: 25px;
-    }
-
-    .input-group {
-        margin-bottom: 15px;
-    }
-
-    label { display: block; margin-bottom: 5px; font-size: 12px; color: var(--gold-seal); }
-
-    input, textarea {
-        width: 100%;
-        background: var(--input-bg);
-        border: 1px solid #33475b;
-        padding: 12px;
-        color: #fff;
-        box-sizing: border-box;
-        font-family: inherit;
-    }
-
-    button {
-        background: var(--gold-seal);
-        color: #000;
-        border: none;
-        padding: 15px 30px;
-        font-weight: bold;
-        cursor: pointer;
-        text-transform: uppercase;
-        width: 100%;
-        transition: 0.3s;
-    }
-
-    button:hover { background: #fff; }
-
-    /* Terminal Success Message */
-    #status-window {
-        display: none;
-        background: #000;
-        border: 1px solid #00ff00;
-        color: #00ff00;
+    .status-notice {
+        background: rgba(40, 167, 69, 0.1);
+        border: 1px solid var(--cleared-green);
         padding: 20px;
         margin-top: 20px;
-        font-family: 'Courier New', monospace;
     }
-
-    .blink { animation: blinker 1s linear infinite; }
-    @keyframes blinker { 50% { opacity: 0; } }
 
     footer {
         background: #000;
         text-align: center;
         padding: 40px;
         font-size: 12px;
-        border-top: 1px solid #222;
         color: #666;
     }
 
     @media (max-width: 768px) {
         .wanted-profile { grid-template-columns: 1fr; }
-        .photo-sector { border-right: none; border-bottom: 2px solid var(--gold-seal); }
     }
 </style>
 </head>
 <body>
 
 <div class="gov-banner">
-    OFFICIAL GOVERNMENT PORTAL • SECURE ENCRYPTION ENABLED • LOGGING IP ADDRESS
+    OFFICIAL GOVERNMENT PORTAL • ARCHIVED RECORD • CASE CLOSED
 </div>
 
 <header>
     <h1>UNITED STATES MARSHALS SERVICE</h1>
-    <div class="sub-header">DISTRICT OF KENTUCKY | WANTED PERSONS DIVISION</div>
+    <div class="sub-header">DISTRICT OF KENTUCKY | CASE DISPOSITION ARCHIVE</div>
 </header>
 
 <div class="container">
 
-    <!-- Profile Section -->
     <div class="wanted-profile">
         <div class="photo-sector">
-            <img src="https://i.ibb.co/LdYTtkkx/IMG-0881.jpg" alt="SUSPECT">
-            <div class="id-badge">WANTED</div>
-            <p style="font-size: 10px; margin-top: 10px;">FILE PHOTO: 2024-EX-09</p>
+            <img src="https://i.ibb.co/LdYTtkkx/IMG-0881.jpg" alt="SUBJECT">
+            <div class="id-badge">CASE CLEARED</div>
+            <p style="font-size: 10px; margin-top: 10px;">ARCHIVE REF: 2024-EX-09-DISMISSED</p>
         </div>
 
         <div class="info-sector">
@@ -214,62 +152,28 @@
             <div class="data-grid">
                 <div class="label">ALIAS:</div><div>Unknown</div>
                 <div class="label">LOCATION:</div><div>Erlanger, KY</div>
-                <div class="label">CHARGES:</div><div style="color: var(--alert-red); font-weight: bold;">SEXUAL HARASSMENT, AGGRAVATED ASSAULT</div>
-                <div class="label">HAIR:</div><div>Brown</div>
-                <div class="label">EYES:</div><div>Brown</div>
+                <div class="label">PREVIOUS CHARGES:</div><div style="text-decoration: line-through; color: #888;">SEXUAL HARASSMENT, AGGRAVATED ASSAULT</div>
+                <div class="label">CURRENT STATUS:</div><div style="color: var(--cleared-green); font-weight: bold;">EXONERATED / NOT GUILTY</div>
+                <div class="label">DISPOSITION:</div><div>All charges dropped by the District of Kentucky.</div>
             </div>
-            <p style="border-top: 1px solid #333; padding-top: 15px;">
-                <strong>CAUTION:</strong> This individual is sought for violent offenses. Do not attempt personal contact. Subject is considered unpredictable.
+
+            <div class="status-notice">
+                <strong>LEGAL DETERMINATION:</strong> 
+                The individual named above is <strong>no longer a person of interest</strong>. Following a full judicial review, all charges have been formally withdrawn. This individual is not guilty of the alleged crimes and has been granted full restoration of movement and civil rights.
+            </div>
+            
+            <p style="font-size: 12px; color: #888; margin-top: 20px;">
+                * This page serves as a public record of case dismissal to ensure the accuracy of background information.
             </p>
-        </div>
-    </div>
-
-    <!-- Tip Form Section -->
-    <div class="tip-form-container">
-        <h3>SUBMIT AN ANONYMOUS TIP</h3>
-        <form id="tipForm">
-            <div class="input-group">
-                <label>YOUR CONTACT INFO (OPTIONAL)</label>
-                <input type="text" placeholder="Email or Phone Number">
-            </div>
-            <div class="input-group">
-                <label>SUBJECT LOCATION / SIGHTING DETAILS</label>
-                <textarea rows="5" id="message" placeholder="Provide as much detail as possible (Date, Time, Location, Vehicle)..." required></textarea>
-            </div>
-            <button type="submit" id="submitBtn">TRANSMIT SECURE DATA</button>
-        </form>
-
-        <div id="status-window">
-            <p>> INITIALIZING SECURE UPLOAD...</p>
-            <p>> ENCRYPTING PACKETS...</p>
-            <p>> DESTINATION: FIELD OFFICE TERMINAL</p>
-            <p class="blink">> [SUCCESS] TIP RECEIVED. CASE FILE UPDATED.</p>
         </div>
     </div>
 
 </div>
 
 <footer>
-    <p>FOR OFFICIAL USE ONLY - UNAUTHORIZED ACCESS IS PROHIBITED BY LAW</p>
-    <p>935 Pennsylvania Avenue NW, Washington, D.C. | Contact: 1-800-CALL-FBI</p>
+    <p>FOR ARCHIVAL PURPOSES ONLY</p>
+    <p>935 Pennsylvania Avenue NW, Washington, D.C. | Record Updated: 2026</p>
 </footer>
-
-<script>
-    document.getElementById('tipForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const btn = document.getElementById('submitBtn');
-        const status = document.getElementById('status-window');
-        
-        btn.innerText = "SENDING...";
-        btn.disabled = true;
-
-        // Simulate network delay
-        setTimeout(() => {
-            document.getElementById('tipForm').style.display = 'none';
-            status.style.display = 'block';
-        }, 1500);
-    });
-</script>
 
 </body>
 </html>
